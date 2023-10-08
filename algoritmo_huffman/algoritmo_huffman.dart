@@ -72,8 +72,9 @@ juntaFrequencia(Map<String, int> letras) {
     chaves.sort((chaveA, chaveB) {
       int comparaValor =
           novaLista[chaveA]!.valor.compareTo(novaLista[chaveB]!.valor);
+          
+      // se as frequências são iguais, ordena pelo mais recente
       if (comparaValor == 0) {
-        // se as frequências são iguais, ordena pelo mais recente
         return -chaveA.compareTo(chaveB);
       } else {
         return comparaValor;
