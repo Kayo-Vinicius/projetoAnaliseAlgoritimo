@@ -25,10 +25,6 @@ contarLetras(List<String> texto) {
     String letra = texto[i];
 
     // verifica se a letra ja existe no contador
-    // contador[letra] == null
-    //     ? contador[letra] = 1
-    //     : contador[letra] = contador[letra]! + 1;
-
     if (contador[letra] == null) {
       contador[letra] = 1;
     } else {
@@ -42,12 +38,6 @@ ordenaFrequencia(Map<String, int> letras) {
   var chaveValor = letras.keys.toList();
 
   // comparando as chaves do map e as ordena
-  // chaveValor.sort((chaveA, chaveB) => (letras[chaveA]! < letras[chaveB]!)
-  //     ? 1
-  //     : (letras[chaveA]! > letras[chaveB]!)
-  //         ? -1
-  //         : 0);
-
   chaveValor.sort((chaveA, chaveB) {
     if ((letras[chaveA]! < letras[chaveB]!)) {
       return 1;
@@ -80,13 +70,13 @@ juntaFrequencia(Map<String, int> letras) {
 
     // ordena o mapa por valor em ordem crescente
     chaves.sort((chaveA, chaveB) {
-      int compare =
+      int comparaValor =
           novaLista[chaveA]!.valor.compareTo(novaLista[chaveB]!.valor);
-      if (compare == 0) {
-        // Se as frequências são iguais, ordena pela ordem de inserção (mais recente primeiro)
+      if (comparaValor == 0) {
+        // se as frequências são iguais, ordena pelo mais recente
         return -chaveA.compareTo(chaveB);
       } else {
-        return compare;
+        return comparaValor;
       }
     });
 
