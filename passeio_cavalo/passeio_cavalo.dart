@@ -69,9 +69,7 @@ class PasseioCavalo {
 
         filhos.add(novoFilho);
         print('Movendo para [$novaLinha, $novaColuna]');
-        if (novoFilho.moverCavalo(novaLinha, novaColuna, proximaCasa + 1)) {
-          return true;
-        }
+        novoFilho.moverCavalo(novaLinha, novaColuna, proximaCasa + 1);
       }
     }
 
